@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <title>❤</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+            }
+            #map {
+                width: 800px;
+                height: 600px;
+                margin: 0 auto;
+            }
+            #content {
+                margin-top: 25%;
+                margin-left: 50%;
+                position: absolute:
+                top: 0;
+                left: 0;
+                transform: translate(-50%,-50%);
+                width: 800px;
+            }
+            #value {
+                margin: 1em 0;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id="content">
+            <select id="value">
+                <option value="1">1 and up</option>
+                <option value="2">2 and up</option>
+                <option value="3">3 and up</option>
+                <option value="4">4 and up</option>
+                <option value="5">5 and up</option>
+                <option value="6">6 and up</option>
+                <option value="7">7 and up</option>
+                <option value="8">8 and up</option>
+            </select>
+
+            <div id="map"></div>
+        </div>
+        <script src="dataset.js"></script>
+        <script src="map.js"></script>
+    
+    </body>
+</html>
