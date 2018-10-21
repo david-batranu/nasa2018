@@ -4,11 +4,17 @@ html,
 body {
 	height: 100%;
 	margin: 0;
-	background-color: #f8f9fa;
+	background: rgb(247,247,220);
+	background: linear-gradient(180deg, rgba(247,247,220,1) 0%, rgba(247,247,220,1) 60%, rgba(34,207,242,1) 100%);
 }
 
 .navbar {
-	/*background-color: #2f80d0 !important;*/
+	background-color: transparent !important;
+}
+
+.navbar h1 {
+	font-family: Georgia, serif;
+    font-weight: bold;
 }
 
 #subtitle {
