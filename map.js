@@ -1,4 +1,4 @@
-var CENTER = [17.51171875, -7.1546875];
+var CENTER = [17.41971875, -7.1546875];
 var COLORS = {
     1: '#ff6e59',
     2: '#ffb287',
@@ -15,7 +15,7 @@ var minValue = 1;
 
 var closestFeat = null;
 
-var map = L.map('map').setView(CENTER, 7);
+var map = L.map('map').setView(CENTER, 8);
 
 
 // https://stackoverflow.com/a/41337005
@@ -26,7 +26,11 @@ function distance(lat1, lon1, lat2, lon2) {
 }
 
 
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZGF2aWRlc2N1IiwiYSI6ImNqbmh1dDJ1ZjBnbDQzd3RsZnZoaGtnYm0ifQ.4Tjqx1sfNRtoixMPMr1Egg', {
+
+
+L.tileLayer(
+//'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZGF2aWRlc2N1IiwiYSI6ImNqbmh1dDJ1ZjBnbDQzd3RsZnZoaGtnYm0ifQ.4Tjqx1sfNRtoixMPMr1Egg', {
+'https://api.mapbox.com/styles/v1/davidescu/cjnii61q11wsk2sk074y4sjdj/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZGF2aWRlc2N1IiwiYSI6ImNqbmh1dDJ1ZjBnbDQzd3RsZnZoaGtnYm0ifQ.4Tjqx1sfNRtoixMPMr1Egg', {
     maxZoom: 17,
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
         '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
