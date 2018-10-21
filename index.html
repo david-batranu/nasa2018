@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <title>❤</title>
+        <title>&#9928;Find water in Sahel</title>
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA==" crossorigin=""/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<link rel="stylesheet" href="./styles/sahel-styles.css"/>
@@ -9,12 +9,24 @@
 
     </head>
 	<body>
+
     <div class="container">
-		<div class="row">
-			<button type="button" class="btn btn-primary">Access current location</button><br>
-		</div>
+
+		<nav class="navbar navbar-light bg-light">
+			<span class="navbar-brand mb-0 h1">
+				<h1>Find water in Sahel</h1>
+				<h5 id="subtitle">Based on NASA's EarthDATA mapping</h5>
+			</span>
+		 </nav>
+
+		<!--div class="row">
+			<div class="col">
+				<button type="button" class="btn btn-primary btn-block">Access current location</button>
+			</div>
+		</div-->
         <div id="content" class="row">
-            <select id="value">
+			<div class="col-6">Select the number of active years for water resources</div>
+            <select id="value" class="col-3 col-span-3">
                 <option value="1">1 and up</option>
                 <option value="2">2 and up</option>
                 <option value="3">3 and up</option>
@@ -24,8 +36,9 @@
                 <option value="7">7 and up</option>
                 <option value="8">8 and up</option>
             </select>
-
-            <div id="map"></div>
+		</div>
+		<div class="row">
+            <div id="map" class="col"></div>
         </div>
         <script src="dataset.js"></script>
         <script src="map.js"></script>

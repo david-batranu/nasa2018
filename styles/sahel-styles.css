@@ -4,6 +4,15 @@ html,
 body {
 	height: 100%;
 	margin: 0;
+	background-color: #f8f9fa;
+}
+
+.navbar {
+	/*background-color: #2f80d0 !important;*/
+}
+
+#subtitle {
+	color: #636363;
 }
 
 #map {
