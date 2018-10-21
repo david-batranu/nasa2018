@@ -1,0 +1,36 @@
+
+
+html, 
+body {
+	height: 100%;
+	margin: 0;
+	background-color: #f8f9fa;
+}
+
+.navbar {
+	/*background-color: #2f80d0 !important;*/
+}
+
+#subtitle {
+	color: #636363;
+}
+
+#map {
+	width: 800px;
+	height: 600px;
+	margin: 0 auto;
+}
+/*
+#content {
+	margin-top: 25%;
+	margin-left: 50%;
+	position: absolute:
+	top: 0;
+	left: 0;
+	transform: translate(-50%,-50%);
+	width: 800px;
+}*/
+
+#value {
+	margin: 1em 0;
+}
