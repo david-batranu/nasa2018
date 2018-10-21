@@ -31,6 +31,11 @@ body {
 	width: 800px;
 }*/
 
+.flex-center {
+  display: flex;
+  align-items: center;
+}
+
 #value {
 	margin: 1em 0;
 }
