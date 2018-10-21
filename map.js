@@ -14,6 +14,7 @@ var COLORS = {
 var minValue = 1;
 
 var closestFeat = null;
+var routeLine = null;
 
 var map = L.map('map').setView(CENTER, 8);
 
@@ -96,7 +97,7 @@ map.on('click', function(evt){
     var latLng = evt.latlng;
     var lat = latLng.lat;
     var lng = latLng.lng;
-    console.log(latLng);
+   // console.log(latLng);
     
     if (cursor != null) {
         map.removeLayer(cursor);
@@ -130,9 +131,22 @@ map.on('click', function(evt){
        
     }
     
+    if (routeLine != null) {
+      map.removeLayer(routeLine);
+      routeLine = null;
+    }
+    else {
+      routeLine = L.polyline([
+        [closestFeat.lat, closestFeat.lng],
+        [lat, lng]
+      ], {color: 'red'}).addTo(map);
+    }
+    
     redraw();
     
-    console.log(closestFeat);
+
+    
+   // console.log(closestFeat);
     
 });
 
