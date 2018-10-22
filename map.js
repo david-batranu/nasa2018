@@ -33,6 +33,7 @@ L.tileLayer(
 //'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZGF2aWRlc2N1IiwiYSI6ImNqbmh1dDJ1ZjBnbDQzd3RsZnZoaGtnYm0ifQ.4Tjqx1sfNRtoixMPMr1Egg', {
 'https://api.mapbox.com/styles/v1/davidescu/cjnii61q11wsk2sk074y4sjdj/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZGF2aWRlc2N1IiwiYSI6ImNqbmh1dDJ1ZjBnbDQzd3RsZnZoaGtnYm0ifQ.4Tjqx1sfNRtoixMPMr1Egg', {
     maxZoom: 17,
+    minZoom: 7,
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
         '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
         'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -53,15 +54,17 @@ var lDataset = L.geoJSON(Dataset, {
     onEachFeature: onEachFeature,
 
     filter: function (feature, layer) {
-        
-        var featLatLng = { lat: feature.geometry.coordinates[1], lng: feature.geometry.coordinates[0] };
+      var featLatLng = { lat: feature.geometry.coordinates[1], lng: feature.geometry.coordinates[0] };
+      var inBounds = map.getBounds().contains([featLatLng.lat, featLatLng.lng]);
+      
+      if (inBounds) {
         var closest = closestFeat ? closestFeat.lat === featLatLng.lat && featLatLng.lng === closestFeat.lng : true;
        
         var filterValue = feature.properties.value >= minValue;
         var filterDistance = closest;
         
         return filterValue && filterDistance;
-
+      }
     },
     
     pointToLayer: function (feature, latlng) {
@@ -92,6 +95,8 @@ function redraw() {
     lDataset.addData(Dataset);
 }
 
+map.on('zoomend', redraw);
+map.on('moveend', redraw);
 
 map.on('click', function(evt){
     var latLng = evt.latlng;
